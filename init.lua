@@ -37,6 +37,7 @@ local plugins = {
   {"windwp/nvim-autopairs"},
   {"feline-nvim/feline.nvim"},
   {"lewis6991/gitsigns.nvim"},
+  {"tpope/vim-fugitive"},
   {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"},
   {
     "catppuccin/nvim",
@@ -126,5 +127,19 @@ require('gitsigns').setup {
     col = 1
   },
 }
+
+-- Example key mappings for Git Fugitive
+vim.api.nvim_set_keymap('n', '<leader>gs', ':Gstatus<CR>', { noremap = true, silent = true }) -- Open git status
+vim.api.nvim_set_keymap('n', '<leader>gc', ':Gcommit<CR>', { noremap = true, silent = true }) -- Git commit
+vim.api.nvim_set_keymap('n', '<leader>gp', ':Gpush<CR>', { noremap = true, silent = true }) -- Git push
+vim.api.nvim_set_keymap('n', '<leader>gl', ':Gpull<CR>', { noremap = true, silent = true }) -- Git pull
+vim.api.nvim_set_keymap('n', '<leader>gd', ':Gdiff<CR>', { noremap = true, silent = true }) -- Git diff
+vim.api.nvim_set_keymap('n', '<leader>gb', ':Gblame<CR>', { noremap = true, silent = true }) -- Git blame
+
+-- mapping to clear screen
+
+-- Clear command line with a custom mapping
+vim.api.nvim_set_keymap('n', '<Leader>c', ':clear<CR>', { noremap = true, silent = true })
+vim.g.fugitive_git_diff_cmd = 'diff --color=always'
 
 require("feline").setup()
