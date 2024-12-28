@@ -9,7 +9,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.encoding = "utf-8"
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 vim.opt.scrolloff = 10
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -64,7 +64,7 @@ vim.cmd("colorscheme catppuccin")
 
 -- Optional: Customize the Catppuccin theme if you want
 require("catppuccin").setup({
-  flavour = "latte",   -- You can use 'latte', 'frappe', 'macchiato', 'mocha'
+  flavour = "frappe",   -- You can use 'latte', 'frappe', 'macchiato', 'mocha'
   background = {
     light = "latte",        -- Light background (for light mode)
     dark = "mocha",         -- Dark background (for dark mode)
@@ -128,7 +128,7 @@ require('gitsigns').setup {
   },
 }
 
--- Example key mappings for Git Fugitive
+-- in order to get this working you have to set the mapping in the config itself
 vim.api.nvim_set_keymap('n', '<leader>gs', ':Gstatus<CR>', { noremap = true, silent = true }) -- Open git status
 vim.api.nvim_set_keymap('n', '<leader>gc', ':Gcommit<CR>', { noremap = true, silent = true }) -- Git commit
 vim.api.nvim_set_keymap('n', '<leader>gp', ':Gpush<CR>', { noremap = true, silent = true }) -- Git push
